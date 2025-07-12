@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush01.c                                           :+:      :+:    :+:   */
+/*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbonneau <sbonneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/12 16:35:49 by sbonneau          #+#    #+#             */
-/*   Updated: 2025/07/12 16:38:50 by sbonneau         ###   ########.fr       */
+/*   Created: 2025/07/12 17:33:29 by sbonneau          #+#    #+#             */
+/*   Updated: 2025/07/12 17:37:07 by sbonneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void check(int x, int y, int row, int col)
+void	check_rush(int x, int y, int row, int col)
 {
 	if ((row == 0 || row == y - 1) && (col == 0 || col == x - 1))
-		ft_putchar('o');
+	{
+		if (row == 0)
+		{
+			if (col == 0)
+				ft_putchar('A');
+			else
+				ft_putchar('C');
+		}
+		else if (row == y - 1)
+		{
+			if (col == 0)
+				ft_putchar('C');
+			else
+				ft_putchar('A');
+		}
+	}
 	else if (row == 0 || row == y - 1)
-		ft_putchar('-');
+		ft_putchar('B');
 	else if (col == 0 || col == x - 1)
-		if (col != x - 1)
-			ft_putchar('B');
-		else
-			ft_putchar('C');
+		ft_putchar('B');
 	else
 		ft_putchar(' ');
 }
@@ -41,7 +53,7 @@ void	rush(int x, int y)
 		col = 0;
 		while (col < x)
 		{
-			check(x, y, row, col);
+			check_rush(x, y, row, col);
 			col++;
 		}
 		ft_putchar('\n');

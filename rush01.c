@@ -6,13 +6,13 @@
 /*   By: sbonneau <sbonneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 16:39:54 by sbonneau          #+#    #+#             */
-/*   Updated: 2025/07/12 17:40:57 by sbonneau         ###   ########.fr       */
+/*   Updated: 2025/07/12 22:33:55 by sbonneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	check_rush(int x, int y, int row, int col)
+void	check_rush1(int x, int y, int row, int col)
 {
 	if ((row == 0 || row == y - 1) && (col == 0 || col == x - 1))
 	{
@@ -39,7 +39,7 @@ void	check_rush(int x, int y, int row, int col)
 		ft_putchar(' ');
 }
 
-void	rush(int x, int y)
+void	rush1(int x, int y)
 {
 	int	row;
 	int	col;
@@ -53,7 +53,7 @@ void	rush(int x, int y)
 		col = 0;
 		while (col < x)
 		{
-			check_rush(x, y, row, col);
+			check_rush1(x, y, row, col);
 			col++;
 		}
 		ft_putchar('\n');

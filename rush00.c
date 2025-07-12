@@ -6,13 +6,13 @@
 /*   By: sbonneau <sbonneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:38:31 by sbonneau          #+#    #+#             */
-/*   Updated: 2025/07/12 15:45:42 by sbonneau         ###   ########.fr       */
+/*   Updated: 2025/07/12 22:14:12 by sbonneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	rush(int x, int y)
+void	rush0(int x, int y)
 {
 	int	row;
 	int	col;
